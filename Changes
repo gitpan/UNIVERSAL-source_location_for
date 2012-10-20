@@ -1,4 +1,6 @@
 Revision history for Perl extension UNIVERSAL::source_location_for
+0.02    Sat Oct 20 16:40:00 2012
+        - re-distribute with new M::I
 
 0.01    Tue Mar 13 17:29:00 2012
         - original version

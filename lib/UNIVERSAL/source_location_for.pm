@@ -3,13 +3,20 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use B ();
+use Carp qw(carp);
 
 sub UNIVERSAL::source_location_for {
     my($self, $method) = @_;
-    my $entity = $self->can($method) or return();
+    my $entity = $self->can($method);
+
+    unless ($entity) {
+        carp ("Undefined subroutine " . (ref $self ? ref $self : $self) . "::" . $method);
+        return();
+    }
+
     my $gv     = B::svref_2object($entity)->GV;
     return($gv->FILE, $gv->LINE);
 }

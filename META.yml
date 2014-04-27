@@ -33,4 +33,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/Cside/UNIVERSAL-source_location_for.git
-version: '0.10'
+version: '0.11'
